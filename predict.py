@@ -1,18 +1,17 @@
 import json
 import time
 import numpy as np
-import matplotlib as plt
 import os
 import argparse as arg
 import tensorflow as tf
 import tensorflow_hub as hub
-import tensorflow_datasets as tfds
 from PIL import Image
 
 # define helper functions
 def load_model(path):
     model_path = './' + path
-    load__model = tf.keras.models.load_model(path ,custom_objects={'KerasLayer':hub.KerasLayer}, compile=False)
+    load_model = tf.keras.models.load_model(path ,custom_objects={'KerasLayer':hub.KerasLayer}, compile=False)
+    return load_model
                                                  
 def process_image(image):
     image_size = 224
